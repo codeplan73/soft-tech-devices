@@ -38,6 +38,8 @@ export async function PATCH(
   } = body
 
   const validation = productSchema.safeParse(body)
+  if (!validation.success)
+    return NextResponse.json(validation.error.format(), { status: 400 })
 
   const product = await prisma.product.findUnique({
     where: { id: params.id },
