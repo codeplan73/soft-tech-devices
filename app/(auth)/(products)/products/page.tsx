@@ -2,8 +2,11 @@ import React from 'react'
 import Banner from '../../components/Banner'
 import Link from 'next/link'
 import { Container } from '@radix-ui/themes'
+import prisma from '@/prisma/client'
 
-const page = () => {
+const page = async () => {
+  const products = await prisma.product.findMany({})
+
   return (
     <div className="flex flex-col w-full px-4 py-4 space-y-4">
       <Banner title="Products Page" />
@@ -20,6 +23,12 @@ const page = () => {
             >
               Add New
             </Link>
+          </div>
+
+          <div>
+            {products.map((product) => (
+              <li key={product.id}>{product.name}</li>
+            ))}
           </div>
         </div>
       </Container>

@@ -12,6 +12,7 @@
     "@hookform/resolvers": "^3.3.4",
     "@prisma/client": "^5.8.0",
     "@radix-ui/themes": "^2.0.3",
+    "axios": "^1.6.5",
     "next": "13.5.5",
     "prisma": "^5.8.0",
     "react": "^18",
