@@ -69,3 +69,20 @@ export async function PATCH(
 }
 
 // delete single product
+export async function DELETE(
+  request: NextRequest,
+  { params }: { params: { id: string } }
+) {
+  const product = await prisma.product.findUnique({
+    where: { id: params.id },
+  })
+
+  if (!product)
+    return NextResponse.json({ error: 'Invalid product' }, { status: 404 })
+
+  await prisma.product.delete({
+    where: { id: product.id },
+  })
+
+  return NextResponse.json({ message: 'Product deleted successfully' })
+}
