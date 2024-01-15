@@ -7,10 +7,10 @@ export const productSchema = z.object({
   price: z.number().min(1, 'price is required'),
   discountPrice: z.number().min(1, 'discount price is required'),
   stockQuantity: z.number().int().min(0, 'stock is required'),
-  shortDescription: z.string().min(10, 'description is required').max(65535),
+  shortDescription: z.string().min(3, 'description is required').max(65535),
   longDescription: z.string().min(10, 'description is required').max(65535),
-  storageSize: z.string().min(10, 'storage size is required').max(100),
-  colour: z.string().min(10, 'colour is required').max(100),
+  storageSize: z.number().min(1, 'storage size is required'),
+  colour: z.string().min(3, 'colour is required'),
   imageUrl: z.string().url(),
 })
 
