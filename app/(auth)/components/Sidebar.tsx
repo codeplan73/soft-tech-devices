@@ -49,7 +49,7 @@ const Sidebar = () => {
   ]
 
   return (
-    <aside className="flex flex-col w-2/12 h-screen justify-between shadow-xl bg-white px-4 py-4">
+    <aside className="hidden md:flex flex-col w-2/12 h-screen justify-between shadow-xl bg-white px-4 py-4">
       <div className="flex flex-col space-y-4">
         <img src="" alt="logo" className="mb-4" />
 

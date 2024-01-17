@@ -19,5 +19,5 @@ export const categorySchema = z.object({
   name: z.string().min(3, 'name is required').max(100),
 })
 
-export type Product = z.infer<typeof productSchema>
-export type Category = z.infer<typeof categorySchema>
+// export type Product = z.infer<typeof productSchema>
+// export type Category = z.infer<typeof categorySchema>
