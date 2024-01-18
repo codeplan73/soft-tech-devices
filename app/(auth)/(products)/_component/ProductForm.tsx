@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
-import { useForm } from 'react-hook-form'
+import { useForm, Controller } from 'react-hook-form'
 import { productSchema } from '@/app/schema'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
-import TextBox from '../../components/TextBox'
-import SelectText from '../../components/SelectText'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
 import Spinner from '../../components/Spinner'
+import SimpleMDE from 'react-simplemde-editor'
+import 'easymde/dist/easymde.min.css'
 
 import toast, { Toaster } from 'react-hot-toast'
 
@@ -28,7 +28,6 @@ const ProductForm = () => {
   const [isSubmitting, setSubmitting] = useState(false)
 
   const handleCreateProduct = async (data: Product) => {
-    // console.log(data)
     try {
       setSubmitting(true)
       await axios.post('/api/products', data)
@@ -83,9 +82,7 @@ const ProductForm = () => {
             {errors.category?.message}
           </p>
         </div>
-      </div>
 
-      <div className="flex flex-col md:flex-row gap-4 md:space-x-4 w-full">
         <div className="flex flex-col space-y-2 w-full md:flex-1">
           <label
             htmlFor="serialNumber"
@@ -107,6 +104,9 @@ const ProductForm = () => {
             {errors.serialNumber?.message}
           </p>
         </div>
+      </div>
+
+      <div className="flex flex-col md:flex-row gap-4 md:space-x-4 w-full">
         <div className="flex flex-col space-y-2 w-full md:flex-1">
           <label htmlFor="price" id="price" className="text-sm text-slate-600">
             Price
@@ -126,9 +126,6 @@ const ProductForm = () => {
             {errors.price?.message}
           </p>
         </div>
-      </div>
-
-      <div className="flex flex-col md:flex-row gap-4 md:space-x-4 w-full">
         <div className="flex flex-col space-y-2 w-full md:flex-1">
           <label
             htmlFor="discountPrice"
@@ -169,51 +166,6 @@ const ProductForm = () => {
           />
           <p className="text-red-600 text-xs font-extralight">
             {errors.stockQuantity?.message}
-          </p>
-        </div>
-      </div>
-
-      <div className="flex flex-col md:flex-row gap-4 md:space-x-4 w-full">
-        <div className="flex flex-col space-y-2 w-full md:flex-1">
-          <label
-            htmlFor="shortDescription"
-            id="shortDescription"
-            className="text-sm text-slate-600"
-          >
-            Short Description
-          </label>
-          <input
-            type="text"
-            id="shortDescription"
-            {...register('shortDescription')}
-            className={`border focus:outline-blue-400 rounded-xl p-2 ${
-              errors.shortDescription ? 'border-red-500' : 'border-slate-300'
-            }`}
-            autoComplete="on"
-          />
-          <p className="text-red-600 text-xs font-extralight">
-            {errors.shortDescription?.message}
-          </p>
-        </div>
-        <div className="flex flex-col space-y-2 w-full md:flex-1">
-          <label
-            htmlFor="longDescription"
-            id="longDescription"
-            className="text-sm text-slate-600"
-          >
-            Long Description
-          </label>
-          <input
-            type="text"
-            id="longDescription"
-            {...register('longDescription')}
-            className={`border focus:outline-blue-400 rounded-xl p-2 ${
-              errors.longDescription ? 'border-red-500' : 'border-slate-300'
-            }`}
-            autoComplete="on"
-          />
-          <p className="text-red-600 text-xs font-extralight">
-            {errors.longDescription?.message}
           </p>
         </div>
       </div>
@@ -273,7 +225,7 @@ const ProductForm = () => {
             Image Upload
           </label>
           <input
-            type="text"
+            type="file"
             id="imageUrl"
             {...register('imageUrl')}
             className={`border focus:outline-blue-400 rounded-xl p-2 ${
@@ -283,6 +235,42 @@ const ProductForm = () => {
           />
           <p className="text-red-600 text-xs font-extralight">
             {errors.imageUrl?.message}
+          </p>
+        </div>
+        <div className="flex flex-col space-y-2 w-full md:flex-1">
+          <label
+            htmlFor="shortDescription"
+            id="shortDescription"
+            className="text-sm text-slate-600"
+          >
+            Summary
+          </label>
+          <input
+            type="text"
+            id="shortDescription"
+            {...register('shortDescription')}
+            className={`border focus:outline-blue-400 rounded-xl p-2 ${
+              errors.shortDescription ? 'border-red-500' : 'border-slate-300'
+            }`}
+            autoComplete="on"
+          />
+          <p className="text-red-600 text-xs font-extralight">
+            {errors.shortDescription?.message}
+          </p>
+        </div>
+      </div>
+
+      <div className="flex flex-col md:flex-row gap-4 md:space-x-4 w-full">
+        <div className="flex flex-col space-y-2 w-full md:flex-1">
+          <Controller
+            name="longDescription"
+            control={control}
+            render={({ field }) => (
+              <SimpleMDE placeholder="Enter Product Description" {...field} />
+            )}
+          />
+          <p className="text-red-600 text-xs font-extralight">
+            {errors.longDescription?.message}
           </p>
         </div>
       </div>
