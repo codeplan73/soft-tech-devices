@@ -15,12 +15,12 @@ model Product {
   name             String
   category         String
   serialNumber     String
-  price            Float
-  discountPrice    Float
+  price            Int
+  discountPrice    Int
   stockQuantity    Int
   shortDescription String
   longDescription  String
-  storageSize      Int
+  storageSize      String
   colour           String
   imageUrl         String
   createdAt        DateTime @default(now())

@@ -7,7 +7,8 @@ const prisma = new PrismaClient()
 
 export async function POST(req: NextRequest, res: NextResponse) {
   const body = await req.json()
-  const {
+  console.log(body)
+  let {
     name,
     category,
     serialNumber,
@@ -20,6 +21,11 @@ export async function POST(req: NextRequest, res: NextResponse) {
     colour,
     imageUrl,
   } = body
+
+  price = parseInt(price)
+  discountPrice = parseInt(discountPrice)
+  stockQuantity = parseInt(stockQuantity)
+  // storageSize = parseInt(storageSize)
 
   const validation = productSchema.safeParse(body)
 

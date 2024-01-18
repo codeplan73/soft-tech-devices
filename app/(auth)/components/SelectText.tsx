@@ -1,14 +1,16 @@
 import React from 'react'
 
-const SelectText = () => {
+interface Props {
+  name: string
+  id: string
+  label: string
+}
+
+const SelectText = ({ name, id, label }: Props) => {
   return (
     <div className="flex flex-col space-y-2 w-full md:flex-1">
-      <label
-        htmlFor="category"
-        id="category"
-        className="text-sm text-slate-600"
-      >
-        Category
+      <label htmlFor={name} id={id} className="text-sm text-slate-600">
+        {label}
       </label>
       <select
         className="border border-slate-300 focus:outline-blue-400 rounded-xl p-2"
