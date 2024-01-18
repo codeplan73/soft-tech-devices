@@ -13,6 +13,8 @@ import axios from 'axios'
 import { useRouter } from 'next/navigation'
 import Spinner from '../../components/Spinner'
 
+import toast, { Toaster } from 'react-hot-toast'
+
 export type Product = z.infer<typeof productSchema>
 
 const page = () => {
@@ -34,6 +36,7 @@ const page = () => {
     try {
       setSubmitting(true)
       await axios.post('/api/products', data)
+      toast.success('Item created successfully.')
       router.refresh()
       router.push('/products')
     } catch (error) {}
@@ -327,6 +330,7 @@ const page = () => {
           </form>
         </div>
       </Container>
+      <Toaster />
     </div>
   )
 }
