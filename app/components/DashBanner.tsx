@@ -22,8 +22,8 @@ const Banner = ({ title }: { title: string }) => {
         hour12: true,
       }
 
-      setCurrentDate(now.toLocaleDateString(undefined, dateOptions))
-      setCurrentTime(now.toLocaleTimeString(undefined, timeOptions))
+      // setCurrentDate(now.toLocaleDateString(undefined, dateOptions))
+      // setCurrentTime(now.toLocaleTimeString(undefined, timeOptions))
     }
 
     // Update date and time every second

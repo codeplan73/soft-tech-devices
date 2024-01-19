@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container } from '@radix-ui/themes'
 import { Metadata } from 'next'
-import Banner from '../components/Banner'
+import Banner from '../../components/DashBanner'
 import AddCategory from './_component/AddCategory'
 import List from './_component/List'
 

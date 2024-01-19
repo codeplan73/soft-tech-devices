@@ -2,9 +2,9 @@
 import Link from 'next/link'
 import { Container } from '@radix-ui/themes'
 import React from 'react'
-import Banner from '../../components/Banner'
 import toast, { Toaster } from 'react-hot-toast'
 import ProductForm from '../_component/ProductForm'
+import Banner from '@/app/components/Banner'
 
 const page = () => {
   return (

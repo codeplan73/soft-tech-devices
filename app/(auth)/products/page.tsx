@@ -1,9 +1,9 @@
 import React from 'react'
-import Banner from '../../components/Banner'
 import Link from 'next/link'
 import { Container } from '@radix-ui/themes'
 import { Metadata } from 'next'
-import ProductTable from '../_component/ProductTable'
+import ProductTable from './_component/ProductTable'
+import Banner from '../../components/Banner'
 
 const page = () => {
   return (

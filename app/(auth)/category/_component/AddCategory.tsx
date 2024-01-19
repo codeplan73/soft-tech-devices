@@ -7,7 +7,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
-import Spinner from '../../components/Spinner'
+import Spinner from '../../../components/Spinner'
 
 import toast, { Toaster } from 'react-hot-toast'
 

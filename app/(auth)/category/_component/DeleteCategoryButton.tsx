@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { BsFillTrash3Fill } from 'react-icons/bs'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
-import Spinner from '../../components/Spinner'
+import Spinner from '../../../components/Spinner'
 
 const DeleteCategoryButton = ({ id }: { id: string }) => {
   const router = useRouter()

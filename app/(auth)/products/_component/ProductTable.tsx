@@ -2,6 +2,7 @@ import React from 'react'
 import prisma from '@/prisma/client'
 import Image from 'next/image'
 import { FaRegTrashAlt, FaRegEdit } from 'react-icons/fa'
+import Link from 'next/link'
 
 const ProductTable = async () => {
   const products = await prisma.product.findMany({})
@@ -72,7 +73,10 @@ const ProductTable = async () => {
               <td className="px-6 py-4"> {product.storageSize}</td>
               <td className="px-6 py-4"> {product.colour}</td>
               <td className="px-6 py-4 pt-7 flex items-end space-x-2">
-                <FaRegEdit className="text-lg border cursor-pointer border-blue-700 text-blue-700" />
+                <Link href={`/products/edit/${product.id}`}>
+                  <FaRegEdit className="text-lg border cursor-pointer border-blue-700 text-blue-700" />
+                </Link>
+
                 <FaRegTrashAlt className="text-lg cursor-pointer text-red-700 border border-red-700" />
               </td>
             </tr>
