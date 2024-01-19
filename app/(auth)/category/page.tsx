@@ -1,13 +1,13 @@
 import React from 'react'
 import { Container } from '@radix-ui/themes'
-
+import { Metadata } from 'next'
 import Banner from '../components/Banner'
 import AddCategory from './_component/AddCategory'
 import List from './_component/List'
 
 const page = async () => {
   return (
-    <div className="flex flex-col w-full px-4 py-4 space-y-4">
+    <div className="flex flex-col w-full px-4 py-4 space-y-4 overflow-y-auto overflow-auto">
       <Banner title="Category Page" />
 
       <Container>
@@ -18,6 +18,13 @@ const page = async () => {
       </Container>
     </div>
   )
+}
+
+export const dynamic = 'force-dynamic'
+
+export const metadata: Metadata = {
+  title: 'Category List',
+  description: 'View all categories',
 }
 
 export default page

@@ -4,12 +4,13 @@ import Link from 'next/link'
 import { Container } from '@radix-ui/themes'
 import prisma from '@/prisma/client'
 import Image from 'next/image'
+import { Metadata } from 'next'
 
 const page = async () => {
   const products = await prisma.product.findMany({})
 
   return (
-    <div className="flex flex-col w-full px-4 py-4 space-y-4">
+    <div className="flex flex-col w-full px-4 py-4 space-y-4 overflow-y-auto overflow-auto">
       <Banner title="Products Page" />
 
       <Container>
@@ -43,6 +44,13 @@ const page = async () => {
       </Container>
     </div>
   )
+}
+
+export const dynamic = 'force-dynamic'
+
+export const metadata: Metadata = {
+  title: 'Product List',
+  description: 'List of all products',
 }
 
 export default page
