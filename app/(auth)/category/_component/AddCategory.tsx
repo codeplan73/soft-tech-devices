@@ -30,10 +30,12 @@ const AddCategory = () => {
     try {
       setSubmitting(true)
       console.log(data)
-      //   await axios.post('/api/category', data)
+      await axios.post('/api/category', data)
       toast.success('Item created successfully.')
       router.refresh()
       router.push('/category')
+      setSubmitting(false)
+      reset()
     } catch (error) {
       console.log(error)
     }
@@ -93,6 +95,8 @@ const AddCategory = () => {
         <span className="text-center"> Submit</span>
         {isSubmitting && <Spinner />}
       </button>
+
+      <Toaster />
     </form>
   )
 }

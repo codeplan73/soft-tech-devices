@@ -9,6 +9,8 @@ export async function POST(req: NextRequest, res: NextResponse) {
 
   const validation = categorySchema.safeParse(body)
 
+  console.log(title, name)
+
   if (!validation.success)
     return NextResponse.json(validation.error.format(), { status: 404 })
 
