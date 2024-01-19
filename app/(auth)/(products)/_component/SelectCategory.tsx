@@ -26,7 +26,7 @@ const SelectCategory: React.FC = () => {
         categories.length !== 0 &&
         categories.map((category) => (
           <option key={category.id} value={category.name}>
-            {category.name}
+            {category.title}
           </option>
         ))}
     </>

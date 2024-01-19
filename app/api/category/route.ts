@@ -9,10 +9,19 @@ export async function POST(req: NextRequest, res: NextResponse) {
 
   const validation = categorySchema.safeParse(body)
 
-  console.log(title, name)
-
   if (!validation.success)
     return NextResponse.json(validation.error.format(), { status: 404 })
+
+  // Check if a category with the same name already exists
+  const existingCategories = await prisma.category.findMany({})
+
+  if (existingCategories.some((category) => category.name === name)) {
+    // Category with the same name already exists, return an error
+    return NextResponse.json(
+      { message: 'Category with this name already exists' },
+      { status: 400 }
+    )
+  }
 
   try {
     const newCategory = await prisma.category.create({

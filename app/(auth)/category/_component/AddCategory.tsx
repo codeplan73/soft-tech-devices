@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import { useForm, Controller } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import { categorySchema } from '@/app/schema'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
@@ -29,15 +29,33 @@ const AddCategory = () => {
   const handleCreateCategory = async (data: Category) => {
     try {
       setSubmitting(true)
-      console.log(data)
+
+      // Check if the category with the same name already exists
+      const existingCategories = await axios.get('/api/category')
+      if (
+        existingCategories.data.some(
+          (category: Category) => category.name === data.name
+        )
+      ) {
+        // Category with the same name already exists, handle accordingly
+        toast.error('Category with this name already exists.')
+        setSubmitting(false)
+        reset()
+        return
+      }
+
+      // If no existing category with the same name, proceed with creating a new one
       await axios.post('/api/category', data)
+
       toast.success('Item created successfully.')
       router.refresh()
       router.push('/category')
       setSubmitting(false)
       reset()
     } catch (error) {
-      console.log(error)
+      console.error('Error creating category:', error)
+      toast.error('Error creating category. Please try again.')
+      setSubmitting(false)
     }
   }
 
@@ -99,7 +117,7 @@ const AddCategory = () => {
         {isSubmitting && <Spinner />}
       </button>
 
-      <Toaster />
+      <Toaster position="top-right" />
     </form>
   )
 }
