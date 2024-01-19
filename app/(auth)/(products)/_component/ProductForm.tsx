@@ -10,6 +10,7 @@ import SimpleMDE from 'react-simplemde-editor'
 import 'easymde/dist/easymde.min.css'
 
 import toast, { Toaster } from 'react-hot-toast'
+import ImageUpload from './ImageUpload'
 
 export type Product = z.infer<typeof productSchema>
 
@@ -26,11 +27,17 @@ const ProductForm = () => {
 
   const [error, setError] = useState('')
   const [isSubmitting, setSubmitting] = useState(false)
+  const [imageUrl, setImageUrl] = useState('')
 
   const handleCreateProduct = async (data: Product) => {
+    const productData = {
+      ...data,
+      imageUrl: imageUrl,
+    }
     try {
       setSubmitting(true)
-      await axios.post('/api/products', data)
+      //   await axios.post('/api/products', data)
+      await axios.post('/api/products', productData)
       toast.success('Item created successfully.')
       router.refresh()
       router.push('/products')
@@ -216,27 +223,8 @@ const ProductForm = () => {
       </div>
 
       <div className="flex flex-col md:flex-row gap-4 md:space-x-4 w-full">
-        <div className="flex flex-col space-y-2 w-full md:flex-1">
-          <label
-            htmlFor="imageUrl"
-            id="imageUrl"
-            className="text-sm text-slate-600"
-          >
-            Image Upload
-          </label>
-          <input
-            type="file"
-            id="imageUrl"
-            {...register('imageUrl')}
-            className={`border focus:outline-blue-400 rounded-xl p-2 ${
-              errors.imageUrl ? 'border-red-500' : 'border-slate-300'
-            }`}
-            autoComplete="on"
-          />
-          <p className="text-red-600 text-xs font-extralight">
-            {errors.imageUrl?.message}
-          </p>
-        </div>
+        {/* <ImageUpload imageUrl={imageUrl} /> */}
+        <ImageUpload setImageUrl={setImageUrl} />
         <div className="flex flex-col space-y-2 w-full md:flex-1">
           <label
             htmlFor="shortDescription"

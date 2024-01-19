@@ -18,7 +18,6 @@ const page = () => {
               Dashboard / New Product
             </Link>
           </div>
-
           <ProductForm />
         </div>
       </Container>

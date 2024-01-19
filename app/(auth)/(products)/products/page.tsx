@@ -3,6 +3,7 @@ import Banner from '../../components/Banner'
 import Link from 'next/link'
 import { Container } from '@radix-ui/themes'
 import prisma from '@/prisma/client'
+import Image from 'next/image'
 
 const page = async () => {
   const products = await prisma.product.findMany({})
@@ -27,7 +28,15 @@ const page = async () => {
 
           <div>
             {products.map((product) => (
-              <li key={product.id}>{product.name}</li>
+              <div key={product.id}>
+                <Image
+                  src={product.imageUrl}
+                  alt={product.name}
+                  height={1000}
+                  width={500}
+                  className="max-w-xs"
+                />
+              </div>
             ))}
           </div>
         </div>
