@@ -20,6 +20,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
     storageSize,
     colour,
     imageUrl,
+    thumbNail,
   } = body
 
   price = parseInt(price)
@@ -46,6 +47,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
         storageSize,
         colour,
         imageUrl,
+        thumbNail,
       },
     })
 

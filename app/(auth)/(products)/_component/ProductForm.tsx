@@ -28,10 +28,12 @@ const ProductForm = () => {
   const [error, setError] = useState('')
   const [isSubmitting, setSubmitting] = useState(false)
   const [imageUrl, setImageUrl] = useState('')
+  const [thumbNail, setThumbNail] = useState('')
 
   const handleCreateProduct = async (data: Product) => {
     const productData = {
       ...data,
+      thumbNail: thumbNail,
       imageUrl: imageUrl,
     }
     try {
@@ -224,7 +226,7 @@ const ProductForm = () => {
 
       <div className="flex flex-col md:flex-row gap-4 md:space-x-4 w-full">
         {/* <ImageUpload imageUrl={imageUrl} /> */}
-        <ImageUpload setImageUrl={setImageUrl} />
+        <ImageUpload setThumbNail={setThumbNail} setImageUrl={setImageUrl} />
         <div className="flex flex-col space-y-2 w-full md:flex-1">
           <label
             htmlFor="shortDescription"

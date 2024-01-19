@@ -23,6 +23,7 @@ model Product {
   storageSize      String
   colour           String
   imageUrl         String
+  thumbNail        String
   createdAt        DateTime @default(now())
   updatedAt        DateTime @updatedAt
   // category    Category @relation(fields: [categoryId], references: [id])

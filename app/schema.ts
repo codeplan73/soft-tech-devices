@@ -18,6 +18,7 @@ export const productSchema = z.object({
   storageSize: z.string().optional(),
   colour: z.string().optional(),
   imageUrl: z.string().optional(),
+  thumbNail: z.string().optional(),
 })
 
 export const categorySchema = z.object({
