@@ -11,7 +11,7 @@ const page = async () => {
       <Banner title="Category Page" />
 
       <Container>
-        <div className="flex flex-col md:flex-row items-center md:justify-start gap-6 px-4 py-4 overflow-y-scroll bg-white rounded-md shadow-xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 px-10 py-10 overflow-y-scroll bg-white rounded-md shadow-xl">
           <List />
           <AddCategory />
         </div>

@@ -22,8 +22,8 @@ export const productSchema = z.object({
 })
 
 export const categorySchema = z.object({
-  title: z.string().min(3, 'title is required').max(100),
-  name: z.string().min(3, 'name is required').max(100),
+  title: z.string().min(3, 'Category title is required').max(100),
+  name: z.string().min(3, 'Category name is required').max(100),
 })
 
 // export type Product = z.infer<typeof productSchema>

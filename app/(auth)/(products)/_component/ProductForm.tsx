@@ -8,7 +8,6 @@ import { useRouter } from 'next/navigation'
 import Spinner from '../../components/Spinner'
 import SimpleMDE from 'react-simplemde-editor'
 import 'easymde/dist/easymde.min.css'
-
 import toast, { Toaster } from 'react-hot-toast'
 import ImageUpload from './ImageUpload'
 
