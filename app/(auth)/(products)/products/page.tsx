@@ -5,16 +5,17 @@ import { Container } from '@radix-ui/themes'
 import prisma from '@/prisma/client'
 import Image from 'next/image'
 import { Metadata } from 'next'
+import ProductTable from '../_component/ProductTable'
 
 const page = async () => {
   const products = await prisma.product.findMany({})
 
   return (
     <div className="flex flex-col w-full px-4 py-4 space-y-4 overflow-y-auto overflow-auto">
-      <Banner title="Products Page" />
+      <Banner title="Products List" />
 
       <Container>
-        <div className="px-4 py-4 overflow-y-scroll bg-white rounded-md shadow-xl">
+        <div className="px-4 py-4 overflow-y-scroll bg-white rounded-md shadow-xl flex flex-col gap-8">
           <div className="flex items-center justify-between">
             <Link href="/dashboard" className="text-xs text-slate-400">
               Dashboard / Product
@@ -28,17 +29,7 @@ const page = async () => {
           </div>
 
           <div>
-            {products.map((product) => (
-              <div key={product.id}>
-                <Image
-                  src={product.imageUrl}
-                  alt={product.name}
-                  height={1000}
-                  width={500}
-                  className="max-w-xs"
-                />
-              </div>
-            ))}
+            <ProductTable />
           </div>
         </div>
       </Container>

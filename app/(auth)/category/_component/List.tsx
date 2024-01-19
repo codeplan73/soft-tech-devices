@@ -6,8 +6,11 @@ const List = async () => {
   const categories = await prisma.category.findMany({})
 
   return (
-    <div className="overflow-y-scroll">
-      <h2 className="text-center text-lg font-bold mb-4">Category List</h2>
+    <div className="overflow-y-scroll flex flex-col gap-4">
+      <h2 className="text-center md:text-start text-lg font-semibold">
+        Category List
+      </h2>
+      <hr />
 
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
         <table className="w-full text-sm text-left rtl:text-right text-gray-500 ">

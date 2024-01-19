@@ -43,10 +43,13 @@ const AddCategory = () => {
 
   return (
     <form
-      className="w-full flex flex-col gap-5"
+      className="w-full flex flex-col gap-4"
       onSubmit={handleSubmit(handleCreateCategory)}
     >
-      <h2 className="text-center text-lg">Add New Category</h2>
+      <h2 className="text-center md:text-start text-lg font-semibold">
+        Add New Category
+      </h2>
+      <hr />
 
       <div className="flex flex-col gap-4  w-full">
         <div className="flex flex-col w-full gap-2">
