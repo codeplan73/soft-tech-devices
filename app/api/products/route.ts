@@ -7,7 +7,7 @@ const prisma = new PrismaClient()
 
 export async function POST(req: NextRequest, res: NextResponse) {
   const body = await req.json()
-  console.log(body)
+
   let {
     name,
     category,
