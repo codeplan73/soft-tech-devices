@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { CldUploadWidget, CldImage } from 'next-cloudinary'
+import Image from 'next/image'
 
 interface CloudinaryResult {
   public_id: string
@@ -30,9 +31,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
       >
         Image Upload
       </label>
-      {publicId && (
-        <CldImage src={url} width={270} height={180} alt="Image"></CldImage>
-      )}
+      {publicId && <Image src={url} width={270} height={180} alt="Image" />}
       <CldUploadWidget
         uploadPreset="fhtjcohs"
         options={{
@@ -45,7 +44,6 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
         onUpload={(result) => {
           if (result.event !== 'success') return
           const info = result.info as CloudinaryResult
-          console.log(info)
           setPublicId(info.public_id)
           setImageUrl(info.secure_url) // Set the imageUrl using the public_id
           setSecureUrl(info.secure_url) // Set the imageUrl using the public_id
@@ -54,8 +52,11 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
         }}
       >
         {({ open }) => (
-          <button className="btn btn-primary " onClick={() => open()}>
-            Upload
+          <button
+            className=" py-2 border border-blue-700 text-blue-700 font-bold rounded-xl"
+            onClick={() => open()}
+          >
+            Upload Product Image
           </button>
         )}
       </CldUploadWidget>

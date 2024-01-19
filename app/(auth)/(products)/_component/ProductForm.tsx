@@ -38,7 +38,6 @@ const ProductForm = () => {
     }
     try {
       setSubmitting(true)
-      //   await axios.post('/api/products', data)
       await axios.post('/api/products', productData)
       toast.success('Item created successfully.')
       router.refresh()
@@ -225,8 +224,6 @@ const ProductForm = () => {
       </div>
 
       <div className="flex flex-col md:flex-row gap-4 md:space-x-4 w-full">
-        {/* <ImageUpload imageUrl={imageUrl} /> */}
-        <ImageUpload setThumbNail={setThumbNail} setImageUrl={setImageUrl} />
         <div className="flex flex-col space-y-2 w-full md:flex-1">
           <label
             htmlFor="shortDescription"
@@ -263,6 +260,10 @@ const ProductForm = () => {
             {errors.longDescription?.message}
           </p>
         </div>
+      </div>
+
+      <div className="flex flex-col md:flex-row gap-4 md:space-x-4 w-full">
+        <ImageUpload setThumbNail={setThumbNail} setImageUrl={setImageUrl} />
       </div>
 
       <button

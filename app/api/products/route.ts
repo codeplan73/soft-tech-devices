@@ -50,8 +50,6 @@ export async function POST(req: NextRequest, res: NextResponse) {
         thumbNail,
       },
     })
-
-    // console.log('Success:', newProduct)
     return NextResponse.json(newProduct, { status: 200 })
   } catch (error) {
     console.error('Error:', error)

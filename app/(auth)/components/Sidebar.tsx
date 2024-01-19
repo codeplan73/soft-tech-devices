@@ -7,6 +7,7 @@ import { GrTransaction } from 'react-icons/gr'
 import { PiShoppingBagOpenBold } from 'react-icons/pi'
 import { TbUsers } from 'react-icons/tb'
 import { RiSettings5Line } from 'react-icons/ri'
+import { MdOutlineCategory } from 'react-icons/md'
 
 const Sidebar = () => {
   const links = [
@@ -41,7 +42,13 @@ const Sidebar = () => {
       icon: <PiShoppingBagOpenBold />,
     },
     {
-      id: 6,
+      id: 5,
+      label: 'Category',
+      link: 'category',
+      icon: <MdOutlineCategory />,
+    },
+    {
+      id: 7,
       label: 'Customer',
       link: 'customer',
       icon: <TbUsers />,
