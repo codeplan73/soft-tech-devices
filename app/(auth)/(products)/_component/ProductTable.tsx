@@ -83,4 +83,6 @@ const ProductTable = async () => {
   )
 }
 
+export const dynamic = 'force-dynamic'
+
 export default ProductTable

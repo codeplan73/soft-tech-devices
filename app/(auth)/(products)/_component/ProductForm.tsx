@@ -10,6 +10,7 @@ import SimpleMDE from 'react-simplemde-editor'
 import 'easymde/dist/easymde.min.css'
 import toast, { Toaster } from 'react-hot-toast'
 import ImageUpload from './ImageUpload'
+import SelectCategory from './SelectCategory'
 
 export type Product = z.infer<typeof productSchema>
 
@@ -80,10 +81,9 @@ const ProductForm = () => {
             id="category"
             autoComplete="on"
           >
-            <option value="">Select Category</option>
-            <option value="phone">Phone</option>
-            <option value="laptop">Laptop</option>
-            <option value="speaker">Speaker</option>
+            <option>Select Category</option>
+
+            <SelectCategory />
           </select>
           <p className="text-red-600 text-xs font-extralight">
             {errors.category?.message}

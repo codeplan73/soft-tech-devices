@@ -2,14 +2,10 @@ import React from 'react'
 import Banner from '../../components/Banner'
 import Link from 'next/link'
 import { Container } from '@radix-ui/themes'
-import prisma from '@/prisma/client'
-import Image from 'next/image'
 import { Metadata } from 'next'
 import ProductTable from '../_component/ProductTable'
 
-const page = async () => {
-  const products = await prisma.product.findMany({})
-
+const page = () => {
   return (
     <div className="flex flex-col w-full px-4 py-4 space-y-4 overflow-y-auto overflow-auto">
       <Banner title="Products List" />

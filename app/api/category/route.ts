@@ -27,3 +27,8 @@ export async function POST(req: NextRequest, res: NextResponse) {
     return NextResponse.json({ message: 'post error', error }, { status: 500 })
   }
 }
+
+export async function GET(response: NextResponse) {
+  const category = await prisma.category.findMany({})
+  return NextResponse.json(category, { status: 200 })
+}
