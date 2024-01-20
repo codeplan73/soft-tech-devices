@@ -1,5 +1,5 @@
 import React from 'react'
-import Banner from '../../../components/DashBanner'
+import Banner from '../../../components/auth/DashBanner'
 import Link from 'next/link'
 import { Container } from '@radix-ui/themes'
 import { Metadata } from 'next'

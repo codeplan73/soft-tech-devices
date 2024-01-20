@@ -3,8 +3,8 @@ import { Inter } from 'next/font/google'
 import '@/app/globals.css'
 import '@radix-ui/themes/styles.css'
 import { Theme } from '@radix-ui/themes'
-import Navbar from './Navbar'
-import Footer from './Footer'
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 

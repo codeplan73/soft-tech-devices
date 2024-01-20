@@ -4,7 +4,7 @@ import { Container } from '@radix-ui/themes'
 import React from 'react'
 import toast, { Toaster } from 'react-hot-toast'
 import ProductForm from '../_component/ProductForm'
-import Banner from '@/app/components/Banner'
+import Banner from '@/app/components/auth/Banner'
 
 const page = () => {
   return (

@@ -1,7 +1,7 @@
 import React from 'react'
-import Sidebar from '../../components/Sidebar'
-import Banner from '../../components/DashBanner'
-import DashboardCard from '../../components/DashboardCard'
+import Sidebar from '../../components/auth/Sidebar'
+import Banner from '../../components/auth/DashBanner'
+import DashboardCard from '../../components/auth/DashboardCard'
 
 const page = () => {
   return (

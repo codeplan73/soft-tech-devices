@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Container } from '@radix-ui/themes'
 import { Metadata } from 'next'
 import ProductTable from './_component/ProductTable'
-import Banner from '../../components/Banner'
+import Banner from '../../components/auth/Banner'
 
 const page = () => {
   return (
@@ -17,7 +17,7 @@ const page = () => {
               Dashboard / Product
             </Link>
             <Link
-              href="/new"
+              href="/products/new"
               className="px-4 py-2 text-sm text-white bg-blue-500 rounded-xl"
             >
               Add New
