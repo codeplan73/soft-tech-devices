@@ -1,5 +1,6 @@
-import Link from 'next/link'
+'use client'
 import React from 'react'
+import Link from 'next/link'
 import { LuLayoutDashboard, LuLogOut } from 'react-icons/lu'
 import { FaSignal } from 'react-icons/fa'
 import { BiDollar } from 'react-icons/bi'
@@ -8,49 +9,51 @@ import { PiShoppingBagOpenBold } from 'react-icons/pi'
 import { TbUsers } from 'react-icons/tb'
 import { RiSettings5Line } from 'react-icons/ri'
 import { MdOutlineCategory } from 'react-icons/md'
+import { useRouter } from 'next/navigation'
 
 const Sidebar = () => {
+  const router = useRouter()
   const links = [
     {
       id: 1,
       label: 'Dashboard',
-      link: 'dashboard',
+      link: '/dashboard',
       icon: <LuLayoutDashboard />,
     },
     {
       id: 2,
       label: 'POS',
-      link: 'pos',
+      link: '/pos',
       icon: <FaSignal />,
     },
     {
       id: 3,
       label: 'Swap',
-      link: 'swap',
+      link: '/swap',
       icon: <GrTransaction />,
     },
     {
       id: 4,
       label: 'Orders',
-      link: 'orders',
+      link: '/orders',
       icon: <BiDollar />,
     },
     {
       id: 5,
       label: 'Products',
-      link: 'products',
+      link: '/products',
       icon: <PiShoppingBagOpenBold />,
     },
     {
       id: 5,
       label: 'Category',
-      link: 'category',
+      link: '/category',
       icon: <MdOutlineCategory />,
     },
     {
       id: 7,
       label: 'Customer',
-      link: 'customer',
+      link: '/customer',
       icon: <TbUsers />,
     },
   ]
