@@ -19,21 +19,21 @@ const Sidebar = () => {
     },
     {
       id: 2,
-      label: 'Statistics',
-      link: 'statistics',
+      label: 'POS',
+      link: 'pos',
       icon: <FaSignal />,
     },
     {
       id: 3,
-      label: 'Payment',
-      link: 'payment',
-      icon: <BiDollar />,
+      label: 'Swap',
+      link: 'swap',
+      icon: <GrTransaction />,
     },
     {
       id: 4,
-      label: 'Transaction',
-      link: 'transaction',
-      icon: <GrTransaction />,
+      label: 'Orders',
+      link: 'orders',
+      icon: <BiDollar />,
     },
     {
       id: 5,
@@ -56,42 +56,44 @@ const Sidebar = () => {
   ]
 
   return (
-    <aside className="hidden h-full md:flex md:w-48 md:flex-col md:fixed md:inset-y-0 z-[80] bg-white">
-      {/* <aside className="hidden md:flex flex-col w-2/12 h-screen justify-between shadow-xl bg-white px-4 py-4"> */}
-      <div className="flex flex-col space-y-4">
-        <ul className="flex flex-col space-y-2">
-          {links.map((link) => (
-            <Link
-              key={link.id}
-              href={link.link}
-              className="flex items-center space-x-3 hover:bg-blue-700 py-2 px-2 rounded-xl hover:text-white text-slate-700 hover:shadow-lg hover:drop-shadow-lg"
-            >
-              <span>{link.icon}</span>
-              <span>{link.label}</span>
-            </Link>
-          ))}
-        </ul>
-      </div>
+    <aside className="hidden h-full md:flex md:w-48 md:flex-col md:fixed  md:inset-y-0 z-[80] bg-white px-4 py-6 gap-6">
+      <img src="" alt="logo" className="" />
+      <div className="flex flex-col justify-between h-full">
+        <div className="flex flex-col space-y-4">
+          <ul className="flex flex-col space-y-2">
+            {links.map((link) => (
+              <Link
+                key={link.id}
+                href={link.link}
+                className="flex items-center space-x-3 hover:bg-blue-700 py-2 px-2 rounded-xl hover:text-white text-slate-700 hover:shadow-lg hover:drop-shadow-lg"
+              >
+                <span>{link.icon}</span>
+                <span>{link.label}</span>
+              </Link>
+            ))}
+          </ul>
+        </div>
 
-      <div className="flex flex-col items-start space-y-2">
-        <Link
-          href="/dashboard"
-          className="flex items-center space-x-3 hover:text-white hover:bg-blue-700 py-2 px-2 rounded-xl text-slate-900 hover:shadow-lg hover:drop-shadow-lg w-full"
-        >
-          <span>
-            <RiSettings5Line />
-          </span>
-          <span>Settings</span>
-        </Link>
-        <Link
-          href="/dashboard"
-          className="flex items-center space-x-3 hover:text-white hover:bg-blue-700 py-2 px-2 rounded-xl text-slate-900 hover:shadow-lg hover:drop-shadow-lg w-full"
-        >
-          <span>
-            <LuLogOut />
-          </span>
-          <span>Logout</span>
-        </Link>
+        <div className="flex flex-col items-start space-y-2">
+          <Link
+            href="/settings"
+            className="flex items-center space-x-3 hover:text-white hover:bg-blue-700 py-2 px-2 rounded-xl text-slate-900 hover:shadow-lg hover:drop-shadow-lg w-full"
+          >
+            <span>
+              <RiSettings5Line />
+            </span>
+            <span>Settings</span>
+          </Link>
+          <Link
+            href="/dashboard"
+            className="flex items-center space-x-3 hover:text-white hover:bg-blue-700 py-2 px-2 rounded-xl text-slate-900 hover:shadow-lg hover:drop-shadow-lg w-full"
+          >
+            <span>
+              <LuLogOut />
+            </span>
+            <span>Logout</span>
+          </Link>
+        </div>
       </div>
     </aside>
   )
