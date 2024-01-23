@@ -88,7 +88,7 @@ const Sidebar = () => {
             <span>Settings</span>
           </Link>
           <Link
-            href="/dashboard"
+            href="/"
             className="flex items-center space-x-3 hover:text-white hover:bg-blue-700 py-2 px-2 rounded-xl text-slate-900 hover:shadow-lg hover:drop-shadow-lg w-full"
           >
             <span>

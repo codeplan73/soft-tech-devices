@@ -14,7 +14,7 @@ const Navbar = () => {
   ]
 
   return (
-    <nav className="w-full md:max-w-7xl flex flex-col space-x-1 mx-auto">
+    <nav className="w-full md:max-w-7xl flex flex-col space-x-1 mx-auto bg-white">
       <div className="w-full px-10 md:px-20 flex items-center justify-between py-4 shadow mx-auto">
         <p className="text-blue-800 uppercase font-extrabold">
           Soft<span className="text-red-700">Tech</span>
