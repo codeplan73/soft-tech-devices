@@ -56,10 +56,9 @@ const Sidebar = () => {
   ]
 
   return (
-    <aside className="hidden md:flex flex-col w-2/12 h-screen justify-between shadow-xl bg-white px-4 py-4">
+    <aside className="hidden h-full md:flex md:w-48 md:flex-col md:fixed md:inset-y-0 z-[80] bg-white">
+      {/* <aside className="hidden md:flex flex-col w-2/12 h-screen justify-between shadow-xl bg-white px-4 py-4"> */}
       <div className="flex flex-col space-y-4">
-        <img src="" alt="logo" className="mb-4" />
-
         <ul className="flex flex-col space-y-2">
           {links.map((link) => (
             <Link
