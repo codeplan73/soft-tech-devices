@@ -1,12 +1,17 @@
 import Image from 'next/image'
 import HeroSection from '../components/landingPage/HeroSection'
 import CategoryCard from '../components/landingPage/CategoryCard'
+import Link from 'next/link'
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-4 px-5 md:px-20 py-5  bg-slate-100">
+    <div className="flex flex-col gap-4 px-5 md:px-20 py-5  bg-slate-50">
+      {/* Hero section */}
       <HeroSection />
-      <div className="grid place-content-center grid-cols-1 md:grid-cols-3 xl:grid-cols-6 md:justify-start  items-start drop-shadow-sm">
+      {/* end hero section */}
+
+      {/*  */}
+      <div className="grid place-content-center grid-cols-2 md:grid-cols-3 xl:grid-cols-6 md:justify-start  items-start drop-shadow-sm">
         <CategoryCard
           image="/img/watch.png"
           text="Smart watches"
@@ -31,7 +36,25 @@ export default function Home() {
         />
         <CategoryCard image="/img/phone.png" text="Speakers" discount="-25%" />
       </div>
-      <h1>Index page this is cool</h1>
+
+      <div className="grid grid-cols-1 md:grid-cols-4">
+        <div
+          className="hidden col-span-1 md:flex flex-col gap-4 bg-contain h-72 rounded-tl-md rounded-bl-md inset-4 p-4"
+          style={{ backgroundImage: "url('/img/items-banner.png')" }}
+        >
+          <h4 className="text-xl md:text-2xl font-semibold line-clamp-4 mb-4">
+            Home items and <br /> Outdoors
+          </h4>
+          <Link
+            href="/products?items=outdoors"
+            className="bg-white text-sm font-semibold rounded-md px-4 py-2 max-w-max"
+          >
+            View All
+          </Link>
+        </div>
+
+        <div className="w-full md:col-span-3"></div>
+      </div>
     </div>
   )
 }
