@@ -2,10 +2,11 @@ import Image from 'next/image'
 import HeroSection from '../components/landingPage/HeroSection'
 import CategoryCard from '../components/landingPage/CategoryCard'
 import Link from 'next/link'
+import ProductCard from '../components/landingPage/ProductCard'
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-4 px-5 md:px-20 py-5  bg-slate-50">
+    <div className="flex flex-col gap-4 px-5 md:px-20 py-5  bg-slate-100">
       {/* Hero section */}
       <HeroSection />
       {/* end hero section */}
@@ -39,7 +40,7 @@ export default function Home() {
 
       <div className="grid grid-cols-1 md:grid-cols-4">
         <div
-          className="hidden col-span-1 md:flex flex-col gap-4 bg-contain h-72 rounded-tl-md rounded-bl-md inset-4 p-4"
+          className="hidden col-span-1 md:hidden lg:flex flex-col gap-4 bg-contain rounded-tl-md rounded-bl-md inset-4 p-4 h-full"
           style={{ backgroundImage: "url('/img/items-banner.png')" }}
         >
           <h4 className="text-xl md:text-2xl font-semibold line-clamp-4 mb-4">
@@ -53,7 +54,48 @@ export default function Home() {
           </Link>
         </div>
 
-        <div className="w-full md:col-span-3"></div>
+        <div className="w-full col-span-1 md:col-span-4 lg:col-span-3 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4">
+          <ProductCard
+            price="5000"
+            title="Smart Watches"
+            image="/img/watch.png"
+          />
+          <ProductCard
+            price="5000"
+            title="Smart Watches"
+            image="/img/watch.png"
+          />
+          <ProductCard
+            price="5000"
+            title="Smart Watches"
+            image="/img/watch.png"
+          />
+          <ProductCard
+            price="5000"
+            title="Smart Watches"
+            image="/img/watch.png"
+          />
+          <ProductCard
+            price="5000"
+            title="Smart Watches"
+            image="/img/watch.png"
+          />
+          <ProductCard
+            price="5000"
+            title="Smart Watches"
+            image="/img/watch.png"
+          />
+          <ProductCard
+            price="5000"
+            title="Smart Watches"
+            image="/img/watch.png"
+          />
+          <ProductCard
+            price="5000"
+            title="Smart Watches"
+            image="/img/watch.png"
+          />
+        </div>
       </div>
     </div>
   )
