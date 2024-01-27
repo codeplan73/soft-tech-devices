@@ -6,7 +6,7 @@ interface Props {
   image: string
 }
 
-const ProductCard = ({ title, price, image }: Props) => {
+const OutDoorCard = ({ title, price, image }: Props) => {
   return (
     <div className="flex flex-col max-w-xs bg-white gap-2 rounded-sm drop-shadow-sm px-2 py-2 border">
       <h4 className="font-semibold text-md">{title}</h4>
@@ -24,4 +24,4 @@ const ProductCard = ({ title, price, image }: Props) => {
   )
 }
 
-export default ProductCard
+export default OutDoorCard

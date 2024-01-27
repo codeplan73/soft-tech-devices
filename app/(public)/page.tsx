@@ -2,7 +2,8 @@ import Image from 'next/image'
 import HeroSection from '../components/landingPage/HeroSection'
 import CategoryCard from '../components/landingPage/CategoryCard'
 import Link from 'next/link'
-import ProductCard from '../components/landingPage/ProductCard'
+import OutDoorCard from '../components/landingPage/OutDoorCard'
+import RequestForm from '../components/landingPage/RequestForm'
 
 export default function Home() {
   return (
@@ -55,47 +56,51 @@ export default function Home() {
         </div>
 
         <div className="w-full col-span-1 md:col-span-4 lg:col-span-3 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4">
-          <ProductCard
+          <OutDoorCard
             price="5000"
             title="Smart Watches"
             image="/img/watch.png"
           />
-          <ProductCard
+          <OutDoorCard
             price="5000"
             title="Smart Watches"
             image="/img/watch.png"
           />
-          <ProductCard
+          <OutDoorCard
             price="5000"
             title="Smart Watches"
             image="/img/watch.png"
           />
-          <ProductCard
+          <OutDoorCard
             price="5000"
             title="Smart Watches"
             image="/img/watch.png"
           />
-          <ProductCard
+          <OutDoorCard
             price="5000"
             title="Smart Watches"
             image="/img/watch.png"
           />
-          <ProductCard
+          <OutDoorCard
             price="5000"
             title="Smart Watches"
             image="/img/watch.png"
           />
-          <ProductCard
+          <OutDoorCard
             price="5000"
             title="Smart Watches"
             image="/img/watch.png"
           />
-          <ProductCard
+          <OutDoorCard
             price="5000"
             title="Smart Watches"
             image="/img/watch.png"
           />
         </div>
+      </div>
+
+      <div>
+        <RequestForm />
       </div>
     </div>
   )
