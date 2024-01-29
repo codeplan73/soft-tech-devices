@@ -33,7 +33,7 @@ const RequestForm = () => {
           id="requestDetails"
           placeholder="Details of your request"
         ></textarea>
-        <div className="quantity-selector w-full flex items-start space-x-2">
+        <div className="quantity-selector w-full flex flex-col md:flex-row items-start gap-4 md:space-x-2">
           <input
             type="text"
             className="quantity-input  w-full border border-slate-300 rounded-md p-2 outline-gray-400"

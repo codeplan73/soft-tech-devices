@@ -5,6 +5,7 @@ import Link from 'next/link'
 import OutDoorCard from '../components/landingPage/OutDoorCard'
 import RequestForm from '../components/landingPage/RequestForm'
 import ProductCardGrid from '../components/landingPage/ProductCardGrid'
+import NewsLetter from './NewsLetter'
 
 export default function Home() {
   return (
@@ -106,7 +107,7 @@ export default function Home() {
 
       <section className="flex flex-col space-y-4 mt-4">
         <h4 className="text-md font-bold">Recommended Items</h4>
-        <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 items-center justify-center">
+        <div className="w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 items-center justify-center">
           <ProductCardGrid
             image="/img/iphone-14-pro-max.jpeg"
             price="5000"
@@ -142,14 +143,11 @@ export default function Home() {
             name="Iphone 14 Pro Max"
             rating="7.5"
           />
-          <ProductCardGrid
-            image="/img/watch.png"
-            price="5000"
-            discountPrice="50000"
-            name="Iphone 14 Pro Max"
-            rating="7.5"
-          />
         </div>
+      </section>
+
+      <section className="flex-col space-y-4 mt-4 grid place-content-center  py-8 text-center">
+        <NewsLetter />
       </section>
     </div>
   )
