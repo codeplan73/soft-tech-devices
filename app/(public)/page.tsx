@@ -4,6 +4,7 @@ import CategoryCard from '../components/landingPage/CategoryCard'
 import Link from 'next/link'
 import OutDoorCard from '../components/landingPage/OutDoorCard'
 import RequestForm from '../components/landingPage/RequestForm'
+import ProductCardGrid from '../components/landingPage/ProductCardGrid'
 
 export default function Home() {
   return (
@@ -102,6 +103,54 @@ export default function Home() {
       <div>
         <RequestForm />
       </div>
+
+      <section className="flex flex-col space-y-4 mt-4">
+        <h4 className="text-md font-bold">Recommended Items</h4>
+        <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 items-center justify-center">
+          <ProductCardGrid
+            image="/img/iphone-14-pro-max.jpeg"
+            price="5000"
+            discountPrice="50000"
+            name="Iphone 14 Pro Max"
+            rating="7.5"
+          />
+          <ProductCardGrid
+            image="/img/camera.png"
+            price="14000"
+            discountPrice="50000"
+            name="Nokix Digital Camera"
+            rating="7.5"
+          />
+          <ProductCardGrid
+            image="/img/headset.png"
+            price="5000"
+            discountPrice="50000"
+            name="Iphone 14 Pro Max"
+            rating="7.5"
+          />
+          <ProductCardGrid
+            image="/img/laptop.png"
+            price="5000"
+            discountPrice="50000"
+            name="Iphone 14 Pro Max"
+            rating="7.5"
+          />
+          <ProductCardGrid
+            image="/img/watch.png"
+            price="5000"
+            discountPrice="50000"
+            name="Iphone 14 Pro Max"
+            rating="7.5"
+          />
+          <ProductCardGrid
+            image="/img/watch.png"
+            price="5000"
+            discountPrice="50000"
+            name="Iphone 14 Pro Max"
+            rating="7.5"
+          />
+        </div>
+      </section>
     </div>
   )
 }
