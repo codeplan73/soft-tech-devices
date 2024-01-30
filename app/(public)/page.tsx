@@ -6,10 +6,12 @@ import OutDoorCard from '../components/landingPage/OutDoorCard'
 import RequestForm from '../components/landingPage/RequestForm'
 import ProductCardGrid from '../components/landingPage/ProductCardGrid'
 import NewsLetter from './NewsLetter'
+import Search from '../components/landingPage/Search'
 
 export default function Home() {
   return (
     <div className="flex flex-col gap-4 px-5 md:px-20 py-5  bg-slate-100">
+      <Search />
       {/* Hero section */}
       <HeroSection />
       {/* end hero section */}
@@ -107,7 +109,7 @@ export default function Home() {
 
       <section className="flex flex-col space-y-4 mt-4">
         <h4 className="text-md font-bold">Recommended Items</h4>
-        <div className="w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 items-center justify-center">
+        <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 items-center justify-items-center md:justify-items-stretch">
           <ProductCardGrid
             image="/img/iphone-14-pro-max.jpeg"
             price="5000"
