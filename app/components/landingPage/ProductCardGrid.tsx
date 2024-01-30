@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import { CiHeart } from 'react-icons/ci'
 import { IoIosStar } from 'react-icons/io'
+import Link from 'next/link'
 
 interface Props {
   image: string
@@ -9,6 +10,7 @@ interface Props {
   discountPrice: string
   name: string
   rating: string
+  link: string
 }
 
 const ProductCardGrid = ({
@@ -17,9 +19,13 @@ const ProductCardGrid = ({
   discountPrice,
   name,
   rating,
+  link,
 }: Props) => {
   return (
-    <div className="flex flex-col border border-slate-200 max-w-sm bg-white gap-2 rounded-md drop-shadow-lg overflow-hidden">
+    <Link
+      href={link}
+      className="flex flex-col border border-slate-200 max-w-sm bg-white gap-2 rounded-md drop-shadow-lg overflow-hidden"
+    >
       {/* <Image
         src={image}
         height={100}
@@ -35,7 +41,7 @@ const ProductCardGrid = ({
           alt="product image"
         />
       </div>
-      <div className="p-4 flex items-start">
+      <div className="p-4 flex items-start justify-between">
         <div className="flex flex-col space-y-1">
           <p className="flex space-x-2">
             <span className="font-bold">{price}</span>
@@ -56,7 +62,7 @@ const ProductCardGrid = ({
         </div>
         <CiHeart className="border border-slate-400 rounded-md text-blue-700 font-extrabold text-xl cursor-pointer" />
       </div>
-    </div>
+    </Link>
   )
 }
 

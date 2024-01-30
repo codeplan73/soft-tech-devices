@@ -50,7 +50,7 @@ export default function Home() {
             Home items and <br /> Outdoors
           </h4>
           <Link
-            href="/products?items=outdoors"
+            href="/items?items=outdoors"
             className="bg-white text-sm font-semibold rounded-md px-4 py-2 max-w-max"
           >
             View All
@@ -114,6 +114,7 @@ export default function Home() {
             discountPrice="50000"
             name="Iphone 14 Pro Max"
             rating="7.5"
+            link={`/items`}
           />
           <ProductCardGrid
             image="/img/camera.png"
@@ -121,6 +122,7 @@ export default function Home() {
             discountPrice="50000"
             name="Nokix Digital Camera"
             rating="7.5"
+            link={`/items`}
           />
           <ProductCardGrid
             image="/img/headset.png"
@@ -128,6 +130,7 @@ export default function Home() {
             discountPrice="50000"
             name="Iphone 14 Pro Max"
             rating="7.5"
+            link={`/items`}
           />
           <ProductCardGrid
             image="/img/laptop.png"
@@ -135,6 +138,7 @@ export default function Home() {
             discountPrice="50000"
             name="Iphone 14 Pro Max"
             rating="7.5"
+            link={`/items`}
           />
           <ProductCardGrid
             image="/img/watch.png"
@@ -142,6 +146,7 @@ export default function Home() {
             discountPrice="50000"
             name="Iphone 14 Pro Max"
             rating="7.5"
+            link={`/items`}
           />
         </div>
       </section>
