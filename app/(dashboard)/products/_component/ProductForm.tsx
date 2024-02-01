@@ -1,6 +1,9 @@
+'use client'
+
 import React, { useState } from 'react'
 import { useForm, Controller } from 'react-hook-form'
 import { productSchema } from '@/app/schema'
+import { Product } from '@prisma/client'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import axios from 'axios'
@@ -12,9 +15,9 @@ import toast, { Toaster } from 'react-hot-toast'
 import ImageUpload from './ImageUpload'
 import SelectCategory from './SelectCategory'
 
-export type Product = z.infer<typeof productSchema>
+export type ProductFormData = z.infer<typeof productSchema>
 
-const ProductForm = () => {
+const ProductForm = ({ product }: { product?: Product }) => {
   const router = useRouter()
 
   const {
@@ -23,14 +26,14 @@ const ProductForm = () => {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<Product>({ resolver: zodResolver(productSchema) })
+  } = useForm<ProductFormData>({ resolver: zodResolver(productSchema) })
 
   const [error, setError] = useState('')
   const [isSubmitting, setSubmitting] = useState(false)
   const [imageUrl, setImageUrl] = useState('')
   const [thumbNail, setThumbNail] = useState('')
 
-  const handleCreateProduct = async (data: Product) => {
+  const handleCreateProduct = async (data: ProductFormData) => {
     const productData = {
       ...data,
       thumbNail: thumbNail,
@@ -41,6 +44,7 @@ const ProductForm = () => {
       await axios.post('/api/products', productData)
       toast.success('Item created successfully.')
       router.refresh()
+      reset()
       router.push('/products')
     } catch (error) {}
   }
@@ -56,6 +60,7 @@ const ProductForm = () => {
             type="text"
             id="name"
             {...register('name')}
+            defaultValue={product?.name}
             className={`border focus:outline-blue-400 rounded-xl p-2 ${
               errors.name ? 'border-red-500' : 'border-slate-300'
             }`}

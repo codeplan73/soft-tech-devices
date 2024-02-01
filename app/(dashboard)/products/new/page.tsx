@@ -6,7 +6,7 @@ import toast, { Toaster } from 'react-hot-toast'
 import ProductForm from '../_component/ProductForm'
 import Banner from '@/app/components/auth/Banner'
 
-const page = () => {
+const NewProductPage = () => {
   return (
     <div className="flex flex-col w-full px-4 py-4 space-y-4">
       <Banner title="Add new Item" />
@@ -26,4 +26,4 @@ const page = () => {
   )
 }
 
-export default page
+export default NewProductPage
