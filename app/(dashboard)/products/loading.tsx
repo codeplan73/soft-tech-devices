@@ -11,31 +11,28 @@ const LoadingProductsPage = () => {
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 ">
             <tr>
               <th scope="col" className="px-6 py-3">
-                Image
+                <Skeleton />
               </th>
               <th scope="col" className="px-6 py-3">
-                Name
+                <Skeleton />
               </th>
               <th scope="col" className="px-6 py-3">
-                Category
+                <Skeleton />
               </th>
               <th scope="col" className="px-6 py-3">
-                Price
+                <Skeleton />
               </th>
               <th scope="col" className="px-6 py-3">
-                Disc.Price
+                <Skeleton />
               </th>
               <th scope="col" className="px-6 py-3">
-                Qty
+                <Skeleton />
               </th>
               <th scope="col" className="px-6 py-3">
-                Size
+                <Skeleton />
               </th>
               <th scope="col" className="px-6 py-3">
-                Color
-              </th>
-              <th scope="col" className="px-6 py-3">
-                Action
+                <Skeleton />
               </th>
             </tr>
           </thead>
@@ -71,72 +68,6 @@ const LoadingProductsPage = () => {
           </tbody>
         </table>
       </div>
-
-      {/* <Table.Root variant="surface" className="w-full max-w-7xl">
-        <Table.Header>
-          <Table.Row>
-            <Table.ColumnHeaderCell>Issue</Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell className="hidden md:table-cell">
-              Image
-            </Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell className="hidden md:table-cell">
-              Name
-            </Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell className="hidden md:table-cell">
-              Category
-            </Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell className="hidden md:table-cell">
-              Price
-            </Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell className="hidden md:table-cell">
-              Disc.Price
-            </Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell className="hidden md:table-cell">
-              QTY
-            </Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell className="hidden md:table-cell">
-              SIZE
-            </Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell className="hidden md:table-cell">
-              Color
-            </Table.ColumnHeaderCell>
-          </Table.Row>
-        </Table.Header>
-
-        <Table.Body>
-          {products.map((product) => (
-            <Table.Row key={product}>
-              <Table.Cell>
-                <Skeleton />
-                <div className="block md:hidden">
-                  <Skeleton />
-                </div>
-              </Table.Cell>
-              <Table.Cell className="hidden md:table-cell">
-                <Skeleton />
-              </Table.Cell>
-              <Table.Cell className="hidden md:table-cell">
-                <Skeleton />
-              </Table.Cell>
-              <Table.Cell className="hidden md:table-cell">
-                <Skeleton />
-              </Table.Cell>
-              <Table.Cell className="hidden md:table-cell">
-                <Skeleton />
-              </Table.Cell>
-              <Table.Cell className="hidden md:table-cell">
-                <Skeleton />
-              </Table.Cell>
-              <Table.Cell className="hidden md:table-cell">
-                <Skeleton />
-              </Table.Cell>
-              <Table.Cell className="hidden md:table-cell">
-                <Skeleton />
-              </Table.Cell>
-            </Table.Row>
-          ))}
-        </Table.Body>
-      </Table.Root> */}
     </>
   )
 }

@@ -23,7 +23,8 @@ export async function PATCH(
   { params }: { params: { id: string } }
 ) {
   const body = await request.json()
-  const {
+
+  let {
     name,
     category,
     serialNumber,
@@ -36,6 +37,10 @@ export async function PATCH(
     colour,
     imageUrl,
   } = body
+
+  price = parseInt(price)
+  discountPrice = parseInt(discountPrice)
+  stockQuantity = parseInt(stockQuantity)
 
   const validation = productSchema.safeParse(body)
   if (!validation.success)

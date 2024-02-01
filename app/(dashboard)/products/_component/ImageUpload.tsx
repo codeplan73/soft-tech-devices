@@ -55,6 +55,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
           <button
             className=" py-2 border border-blue-700 text-blue-700 font-bold rounded-xl"
             onClick={() => open()}
+            type="button"
           >
             Upload Product Image
           </button>

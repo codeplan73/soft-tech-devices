@@ -32,7 +32,7 @@ const EditProductPage = async ({ params }: Props) => {
         <div className="px-4 py-4 overflow-y-scroll bg-white rounded-md shadow-xl space-y-6">
           <div className="flex items-center justify-between">
             <Link href="/dashboard" className="text-xs text-slate-400">
-              Dashboard / New Product
+              Dashboard / Product / Edit / {product?.name}
             </Link>
           </div>
           <ProductForm product={product} />
