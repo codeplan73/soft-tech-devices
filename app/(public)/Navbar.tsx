@@ -1,21 +1,23 @@
 'use client'
 
 import { useState } from 'react'
-import { FaUser } from 'react-icons/fa'
+import { FaUser, FaRegListAlt } from 'react-icons/fa'
 import { IoHeart } from 'react-icons/io5'
-import { FaRegListAlt } from 'react-icons/fa'
 import { GiShoppingCart } from 'react-icons/gi'
-import Link from 'next/link'
 import { TiThMenu } from 'react-icons/ti'
 import { CgMenuMotion } from 'react-icons/cg'
+import { IoMdHome } from 'react-icons/io'
+import { CiViewList } from 'react-icons/ci'
+import Link from 'next/link'
 
 const Navbar = () => {
   const [open, setIsOpen] = useState(false)
   const links = [
-    { id: 1, label: 'Products', link: '/items', icon: <IoHeart /> },
-    { id: 2, label: 'Profile', link: '/profile', icon: <FaUser /> },
-    { id: 3, label: 'Wishlist', link: '/wishlist', icon: <FaRegListAlt /> },
-    { id: 4, label: 'Orders', link: '/myorders', icon: <IoHeart /> },
+    { id: 1, label: 'Home', link: '/', icon: <IoMdHome /> },
+    { id: 2, label: 'Products', link: '/items', icon: <CiViewList /> },
+    { id: 3, label: 'Profile', link: '/profile', icon: <FaUser /> },
+    { id: 4, label: 'Wishlist', link: '/wishlist', icon: <FaRegListAlt /> },
+    { id: 5, label: 'Orders', link: '/myorders', icon: <IoHeart /> },
     // { id: 4, label: 'Cart', link: '/cart', icon:  },
   ]
 
@@ -103,6 +105,7 @@ const Navbar = () => {
               key={link.id}
               href={link.link}
               className="flex p-4 text-slate-700 hover:bg-slate-200"
+              onClick={() => setIsOpen(false)}
             >
               <span className="text-xl mr-2">{link.icon}</span>
               <span>{link.label}</span>
@@ -111,6 +114,7 @@ const Navbar = () => {
         <Link
           href="/cart"
           className="flex p-4 text-slate-700 hover:bg-slate-200"
+          onClick={() => setIsOpen(false)}
         >
           <span className="text-xl mr-2">
             <GiShoppingCart />
