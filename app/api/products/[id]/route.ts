@@ -53,6 +53,10 @@ export async function PATCH(
   if (!product)
     return NextResponse.json({ error: 'Invalid product ' }, { status: 404 })
 
+  if (product.imageUrl === undefined) {
+  } else {
+  }
+
   const updatedProduct = await prisma.product.update({
     where: { id: product.id },
     data: {

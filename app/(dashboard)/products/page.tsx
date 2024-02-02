@@ -4,6 +4,7 @@ import { Container } from '@radix-ui/themes'
 import { Metadata } from 'next'
 import ProductTable from './_component/ProductTable'
 import Banner from '../../components/auth/Banner'
+import { Toaster } from 'react-hot-toast'
 
 const page = () => {
   return (
@@ -11,7 +12,7 @@ const page = () => {
       <Banner title="Products List" />
 
       <Container>
-        <div className="px-4 py-4 overflow-y-scroll bg-white rounded-md shadow-xl flex flex-col gap-8">
+        <div className="px-4 py-4 bg-white rounded-md shadow-xl flex flex-col gap-8">
           <div className="flex items-center justify-between">
             <Link href="/dashboard" className="text-xs text-slate-400">
               Dashboard / Product
@@ -29,6 +30,7 @@ const page = () => {
           </div>
         </div>
       </Container>
+      <Toaster />
     </div>
   )
 }

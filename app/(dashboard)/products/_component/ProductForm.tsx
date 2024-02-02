@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useForm, Controller } from 'react-hook-form'
 import { productSchema } from '@/app/schema'
 import { Product } from '@prisma/client'
@@ -32,14 +32,21 @@ const ProductForm = ({ product }: { product?: Product }) => {
 
   const [error, setError] = useState('')
   const [isSubmitting, setSubmitting] = useState(false)
-  const [imageUrl, setImageUrl] = useState('')
+  const [imageUrl, setImageUrl] = useState(product?.imageUrl || '')
   const [thumbNail, setThumbNail] = useState('')
+
+  useEffect(() => {
+    if (product?.imageUrl) {
+      setImageUrl(product.imageUrl)
+    }
+  }, [product])
 
   const handleCreateProduct = async (data: ProductFormData) => {
     const productData = {
       ...data,
-      thumbNail: thumbNail,
-      imageUrl: imageUrl,
+
+      thumbNail: thumbNail || product?.thumbNail,
+      imageUrl: imageUrl ? imageUrl : product?.imageUrl,
     }
     try {
       setSubmitting(true)
@@ -58,7 +65,7 @@ const ProductForm = ({ product }: { product?: Product }) => {
   }
 
   return (
-    <>
+    <div className="flex flex-col gap-4">
       {error && (
         <Callout.Root color="red" className="mb-5">
           <Callout.Text>{error}</Callout.Text>
@@ -316,7 +323,7 @@ const ProductForm = ({ product }: { product?: Product }) => {
           {isSubmitting && <Spinner />}
         </Button>
       </form>
-    </>
+    </div>
   )
 }
 
