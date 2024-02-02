@@ -73,9 +73,9 @@ const ProductTable = async () => {
               <td className="px-6 py-4"> {product.stockQuantity}</td>
               <td className="px-6 py-4"> {product.storageSize}</td>
               <td className="px-6 py-4"> {product.colour}</td>
-              <td className="px-6 py-4 pt-7 flex items-end space-x-2">
+              <td className="px-6 py-4 pt-7 flex items-start space-x-2">
                 <Link href={`/products/edit/${product.id}`}>
-                  <FaRegEdit className="text-lg border cursor-pointer border-blue-700 text-blue-700" />
+                  <FaRegEdit className="text-xl cursor-pointer text-blue-700" />
                 </Link>
 
                 <DeleteProductButton productId={product.id} />

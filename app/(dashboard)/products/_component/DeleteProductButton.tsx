@@ -3,6 +3,7 @@
 import React from 'react'
 import { AlertDialog, Button, Flex } from '@radix-ui/themes'
 import { FaRegTrashAlt } from 'react-icons/fa'
+import { MdDelete } from 'react-icons/md'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
@@ -29,8 +30,8 @@ const DeleteProductButton = ({ productId }: { productId: string }) => {
     <div>
       <AlertDialog.Root>
         <AlertDialog.Trigger>
-          <Button color="mint" disabled={isDeleting}>
-            <FaRegTrashAlt className="text-lg cursor-pointer text-red-700 border border-red-700 pr-4" />
+          <Button variant="outline" size="1" disabled={isDeleting}>
+            <FaRegTrashAlt className="text-lg cursor-pointer text-red-700" />
             {isDeleting && <Spinner />}
           </Button>
         </AlertDialog.Trigger>
