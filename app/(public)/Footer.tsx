@@ -36,7 +36,7 @@ const Footer = () => {
   const date = new Date(Date.now()).getFullYear()
 
   return (
-    <footer className="w-full mx-auto flex flex-col">
+    <footer className="w-full md:max-w-7xl mx-auto flex flex-col">
       <div className="w-full md:max-w-7xl mx-auto px-10 md:px-40 flex flex-col md:flex-row gap-10 py-8 bg-white">
         <div className="flex flex-col items-start gap-1 space w-full md:w-3/12">
           <p className="text-blue-800 uppercase font-extrabold">
@@ -113,7 +113,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="bg-slate-200 max-w-7xl px-10 md:px-20 py-5 text-sm font-semibold text-slate-700 text-center ">
+      <div className="bg-slate-200 px-10 md:px-20 py-5 text-sm font-semibold text-slate-700 text-center ">
         <span>&copy; {date} E-commmerce</span> powered by{' '}
         <Link href="#" className="">
           Globe-Raven
