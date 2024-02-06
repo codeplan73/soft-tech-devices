@@ -38,3 +38,26 @@ model Category {
   updatedAt DateTime @updatedAt
   // products  Product[] // One-to-Many relationship with Product
 }
+
+model Swap {
+  id                String   @id @default(auto()) @map("_id") @db.ObjectId
+  itemName          String
+  itemBrand         String
+  itemModel         String
+  serialNumberFrom  String
+  serialNumberTo    String?
+  upgradeFrom       String
+  upgradeTo         String
+  customerName      String
+  customerPhone     String
+  customerEmail     String?
+  address           String
+  idUpload          String
+  status            String
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  appraisalValue    Float?
+  differencePayable Float?
+  paymentStatus     String?
+  trackingNumber    String?
+}
