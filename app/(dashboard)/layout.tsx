@@ -23,10 +23,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Theme appearance="light" grayColor="sage">
-          <Sidebar />
-          <div className="flex flex-col relative gap-4 overflow-hidden">
-            <Navbar />
-            <main className="w-full md:max-w-7xl md:pl-48 mx-auto flex justify-between bg-slate-100 flex-1 overflow-x-hidden overflow-y-auto mt-16 z-10 py-2 pr-2">
+          <div className="w-full md:max-w-7xl mx-auto">
+            <Sidebar />
+            <main className="w-full md:max-w-7xl mx-auto flex justify-between bg-slate-100 flex-1 overflow-x-hidden overflow-y-auto md:pl-48 mt-16 z-10">
+              <Navbar />
               {children}
             </main>
           </div>

@@ -57,7 +57,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
   }
 }
 
-export async function GET(response: NextResponse) {
+export async function GET(req: NextRequest, res: NextResponse) {
   const products = await prisma.product.findMany({})
   const totalProducts = products.length
   return NextResponse.json(

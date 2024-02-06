@@ -10,6 +10,7 @@ import { TbUsers } from 'react-icons/tb'
 import { RiSettings5Line } from 'react-icons/ri'
 import { MdOutlineCategory } from 'react-icons/md'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 
 const Sidebar = () => {
   const router = useRouter()
@@ -60,7 +61,7 @@ const Sidebar = () => {
 
   return (
     <aside className="hidden h-full md:flex md:w-48 md:flex-col md:fixed  md:inset-y-0 z-[80] bg-white px-4 py-6 gap-6">
-      <img src="" alt="logo" className="" />
+      <Image src="" alt="logo" height={100} width={100} className="" />
       <div className="flex flex-col justify-between h-full">
         <div className="flex flex-col space-y-4">
           <ul className="flex flex-col space-y-2">

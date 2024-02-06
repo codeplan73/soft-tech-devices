@@ -3,8 +3,14 @@ import Link from 'next/link'
 import { Container } from '@radix-ui/themes'
 import React from 'react'
 import toast, { Toaster } from 'react-hot-toast'
-import ProductForm from '../_component/ProductForm'
 import Banner from '@/app/components/auth/Banner'
+import dynamic from 'next/dynamic'
+import ProductFormSkeleton from '../_component/FormSkeleton'
+
+const ProductForm = dynamic(() => import('../_component/ProductForm'), {
+  ssr: false,
+  loading: () => <ProductFormSkeleton />,
+})
 
 const NewProductPage = () => {
   return (
