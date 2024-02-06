@@ -51,7 +51,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
       },
     })
 
-    return NextResponse.json({ newSwap, status: 200 })
+    return NextResponse.json(newSwap, { status: 200 })
   } catch (error) {
     console.error('Error: ', error)
     return NextResponse.json({ message: 'swap error', error }, { status: 500 })
