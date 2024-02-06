@@ -26,5 +26,21 @@ export const categorySchema = z.object({
   name: z.string().min(3, 'Category name is required').max(100),
 })
 
-// export type Product = z.infer<typeof productSchema>
-// export type Category = z.infer<typeof categorySchema>
+export const swapSchema = z.object({
+  itemName: z.string().min(3, 'Item name is required').max(100),
+  itemBrand: z.string().min(3, 'Item brand is required').max(100),
+  itemModel: z.string().min(3, 'Item model is required').max(100),
+  serialNumberFrom: z.string().min(3, 'Item serial number is required'),
+  serialNumberTo: z.string().min(2, 'Item serial number is required'),
+  upgradeFrom: z.string().min(2, 'Item upgrade from is required').max(100),
+  upgradeTo: z.string().min(2, 'Item upgrade to is required').max(100),
+  customerName: z.string().min(2, 'Customer name is required').max(100),
+  customerPhone: z.string().min(2, 'phone number is required').max(100),
+  customerEmail: z.string().min(2, 'email is required').max(100),
+  address: z.string().min(3, 'Address is required').max(100),
+  idUpload: z.string().optional(),
+  status: z.string().min(3, 'Status is required'),
+  appraisalValue: z.number().min(3, 'Item value is required'),
+  differencePayable: z.number().min(3, 'Amount payable is required'),
+  paymentStatus: z.string().min(1, 'Payment status is required'),
+})

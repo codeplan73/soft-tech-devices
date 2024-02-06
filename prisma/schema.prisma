@@ -59,5 +59,4 @@ model Swap {
   appraisalValue    Float?
   differencePayable Float?
   paymentStatus     String?
-  trackingNumber    String?
 }

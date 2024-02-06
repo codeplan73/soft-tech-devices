@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { productSchema } from '@/app/schema'
-// import prisma from '@/prisma/client'
 
 const { PrismaClient } = require('@prisma/client')
 const prisma = new PrismaClient()
