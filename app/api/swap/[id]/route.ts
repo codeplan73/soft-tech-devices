@@ -77,3 +77,21 @@ export async function PATCH(
 
   return NextResponse.json(updatedSwap, { status: 200 })
 }
+
+export async function DELETE(
+  request: NextRequest,
+  { params }: { params: { id: string } }
+) {
+  const swap = await prisma.swap.findUnique({
+    where: { id: params.id },
+  })
+
+  if (!swap)
+    return NextResponse.json({ error: 'Invalid swap' }, { status: 404 })
+
+  await prisma.swap.delete({
+    where: { id: swap.id },
+  })
+
+  return NextResponse.json({ message: 'Swap Item deleted successfully' })
+}
