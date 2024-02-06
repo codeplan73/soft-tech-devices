@@ -16,3 +16,64 @@ export async function GET(
     return NextResponse.json({ error: 'Invalid swap id' }, { status: 404 })
   }
 }
+
+export async function PATCH(
+  request: NextRequest,
+  { params }: { params: { id: string } }
+) {
+  const body = await request.json()
+
+  const validation = swapSchema.safeParse(body)
+
+  if (!validation.success)
+    return NextResponse.json(validation.error.format(), { status: 404 })
+
+  const {
+    itemName,
+    itemBrand,
+    itemModel,
+    serialNumberFrom,
+    serialNumberTo,
+    upgradeFrom,
+    upgradeTo,
+    customerName,
+    customerPhone,
+    customerEmail,
+    address,
+    idUpload,
+    status,
+    appraisalValue,
+    differencePayable,
+    paymentStatus,
+  } = body
+
+  const swap = await prisma.swap.findUnique({
+    where: { id: params.id },
+  })
+
+  if (!swap) return NextResponse.json({ error: 'No swap found' })
+
+  const updatedSwap = await prisma.swap.update({
+    where: { id: swap.id },
+    data: {
+      itemName,
+      itemBrand,
+      itemModel,
+      serialNumberFrom,
+      serialNumberTo,
+      upgradeFrom,
+      upgradeTo,
+      customerName,
+      customerPhone,
+      customerEmail,
+      address,
+      idUpload,
+      status,
+      appraisalValue,
+      differencePayable,
+      paymentStatus,
+    },
+  })
+
+  return NextResponse.json(updatedSwap, { status: 200 })
+}
