@@ -17,14 +17,12 @@ const NewSwapPage = () => {
               Dashboard / New Swap
             </Link>
           </div>
-          <div className="flex flex-col md:flex-row gap-6">
+          <SwapForm />
+          {/* <div className="flex flex-col md:flex-row gap-6">
             <div className="w-full md:w-8/12">
-              <SwapForm />
             </div>
-            <div className="w-full md:w-4/12 bg-white drop-shadow-lg rounded-lg">
-              <h4>Print Receipt Section</h4>
-            </div>
-          </div>
+  
+          </div> */}
         </div>
       </Container>
       <Toaster />

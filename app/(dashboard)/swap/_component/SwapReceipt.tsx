@@ -9,7 +9,7 @@ const ReceiptComponent = ({ swapData }: { swapData: Swap }) => {
   }
 
   return (
-    <div>
+    <div className="w-6/12 h-full flex flex-col gap-2 justify-center items-center py-2 px-2">
       <style>
         {`
           @media print {
@@ -30,13 +30,102 @@ const ReceiptComponent = ({ swapData }: { swapData: Swap }) => {
           }
         `}
       </style>
-      <div
-        id="receiptComponentToPrint"
-        className="w-6/12 flex flex-col items-center justify-center"
-      >
-        <h1 className="text-xl font-bold">Soft-Tech Devices</h1>
-        <p>Name: {swapData.itemName}</p>
-        <p>Brand: {swapData.itemBrand}</p>
+      <div id="receiptComponentToPrint" className="flex flex-col gap-4">
+        <h4 className="text-2xl font-bold uppercase text-center">
+          Swap Receipt
+        </h4>
+        <hr className=" border-2" />
+        <div>
+          <table className="">
+            <tbody>
+              <tr className="">
+                <td className="text-left">Soft-Tech Devices</td>
+                <td className="text-right">
+                  27, Arala Street, Airport Road, Benin City Edo State
+                </td>
+              </tr>
+              <tr>
+                <td className="text-left">Date</td>
+                <td className="text-right">Date </td>
+              </tr>
+              <tr>
+                <td className="text-left">Manager</td>
+                <td className="text-right">Ikechuku Ogbulu</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <hr className=" border-2" />
+        <div>
+          <table className="w-full">
+            <tbody>
+              <tr className="">
+                <td className="text-left">Item Name</td>
+                <td className="text-right">{swapData.itemName}</td>
+              </tr>
+              <tr className="">
+                <td className="text-left">Brand</td>
+                <td className="text-right">{swapData.itemBrand}</td>
+              </tr>
+              <tr className="">
+                <td className="text-left">Model</td>
+                <td className="text-right">{swapData.itemModel}</td>
+              </tr>
+              <tr className="">
+                <td className="text-left">Serial Number</td>
+                <td className="text-right">{swapData.serialNumberFrom}</td>
+              </tr>
+              <tr className="">
+                <td className="text-left">Serial Number</td>
+                <td className="text-right">{swapData.serialNumberTo}</td>
+              </tr>
+              <tr className="">
+                <td className="text-left">Upgrade</td>
+                <td className="text-right">{swapData.upgradeFrom}</td>
+              </tr>
+              <tr className="">
+                <td className="text-left">Upgrade</td>
+                <td className="text-right">{swapData.upgradeTo}</td>
+              </tr>
+              <tr className="">
+                <td className="text-left">Name</td>
+                <td className="text-right">{swapData.customerName}</td>
+              </tr>
+              <tr className="">
+                <td className="text-left">Phone</td>
+                <td className="text-right">{swapData.customerPhone}</td>
+              </tr>
+              <tr className="">
+                <td className="text-left">Email</td>
+                <td className="text-right">{swapData.customerEmail}</td>
+              </tr>
+              <tr className="">
+                <td className="text-left">Status</td>
+                <td className="text-right">{swapData.status}</td>
+              </tr>
+              <tr className="">
+                <td className="text-left">Address</td>
+                <td className="text-right">{swapData.address}</td>
+              </tr>
+              <tr className="">
+                <td className="text-left">Cost Value</td>
+                <td className="text-right">{swapData.appraisalValue}</td>
+              </tr>
+              <tr className="">
+                <td className="text-left">Amount Payable</td>
+                <td className="text-right">{swapData.differencePayable}</td>
+              </tr>
+              <tr className="">
+                <td className="text-left">Payment Status</td>
+                <td className="text-right">{swapData.paymentStatus}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <hr className=" border-2" />
+        <p className="capitalize font-bold text-lg text-center">
+          Thank you for shopping with us
+        </p>
       </div>
 
       <button
