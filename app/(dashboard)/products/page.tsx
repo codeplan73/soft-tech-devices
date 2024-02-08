@@ -6,7 +6,7 @@ import ProductTable from './_component/ProductTable'
 import Banner from '../../components/auth/Banner'
 import { Toaster } from 'react-hot-toast'
 
-const page = () => {
+const ProductPage = () => {
   return (
     <div className="flex flex-col w-full px-4 py-4 space-y-4 overflow-y-auto overflow-auto">
       <Banner title="Products List" />
@@ -42,4 +42,4 @@ export const metadata: Metadata = {
   description: 'List of all products',
 }
 
-export default page
+export default ProductPage
