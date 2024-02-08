@@ -28,7 +28,7 @@ export async function PATCH(
   if (!validation.success)
     return NextResponse.json(validation.error.format(), { status: 404 })
 
-  const {
+  let {
     itemName,
     itemBrand,
     itemModel,
@@ -46,6 +46,9 @@ export async function PATCH(
     differencePayable,
     paymentStatus,
   } = body
+
+  appraisalValue = parseFloat(appraisalValue)
+  differencePayable = parseFloat(differencePayable)
 
   const swap = await prisma.swap.findUnique({
     where: { id: params.id },
