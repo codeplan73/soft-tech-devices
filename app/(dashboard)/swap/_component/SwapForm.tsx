@@ -46,15 +46,15 @@ const SwapForm = ({ swap }: { swap?: Swap }) => {
     }
     try {
       setSubmitting(true)
-      if (swap) await axios.patch(`/api/swap/${swap.id}`, swapData)
-      else await axios.post('/api/swap', swapData)
+      // if (swap) await axios.patch(`/api/swap/${swap.id}`, swapData)
+      // else await axios.post('/api/swap', swapData)
 
       let response
       if (swap) {
-        response = await axios.patch(`/api/swap/${swap.id}`, data)
+        response = await axios.patch(`/api/swap/${swap.id}`, swapData)
         toast.success('Swap created successfully.')
       } else {
-        response = await axios.post('/api/swap', data)
+        response = await axios.post('/api/swap', swapData)
         toast.success('Swap details updated successfully.')
       }
 
