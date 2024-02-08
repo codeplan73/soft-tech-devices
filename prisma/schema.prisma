@@ -45,18 +45,18 @@ model Swap {
   itemBrand         String
   itemModel         String
   serialNumberFrom  String
-  serialNumberTo    String?
+  serialNumberTo    String
   upgradeFrom       String
   upgradeTo         String
   customerName      String
   customerPhone     String
-  customerEmail     String?
+  customerEmail     String
   address           String
   idUpload          String
   status            String
   createdAt         DateTime @default(now())
   updatedAt         DateTime @updatedAt
-  appraisalValue    Float?
-  differencePayable Float?
-  paymentStatus     String?
+  appraisalValue    Int
+  differencePayable Int
+  paymentStatus     String
 }

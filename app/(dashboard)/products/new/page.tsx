@@ -5,7 +5,7 @@ import React from 'react'
 import toast, { Toaster } from 'react-hot-toast'
 import Banner from '@/app/components/auth/Banner'
 import dynamic from 'next/dynamic'
-import ProductFormSkeleton from '../_component/FormSkeleton'
+import ProductFormSkeleton from '../../_components/FormSkeleton'
 
 const ProductForm = dynamic(() => import('../_component/ProductForm'), {
   ssr: false,

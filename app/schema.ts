@@ -40,7 +40,7 @@ export const swapSchema = z.object({
   address: z.string().min(3, 'Address is required').max(100),
   idUpload: z.string().optional(),
   status: z.string().min(3, 'Status is required'),
-  appraisalValue: z.number().min(3, 'Item value is required'),
-  differencePayable: z.number().min(3, 'Amount payable is required'),
+  appraisalValue: z.string().min(3, 'Item value is required'),
+  differencePayable: z.string().min(3, 'Amount payable is required'),
   paymentStatus: z.string().min(1, 'Payment status is required'),
 })

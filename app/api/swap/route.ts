@@ -10,7 +10,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
   if (!validation.success)
     return NextResponse.json(validation.error.format(), { status: 404 })
 
-  const {
+  let {
     itemName,
     itemBrand,
     itemModel,
@@ -28,6 +28,9 @@ export async function POST(req: NextRequest, res: NextResponse) {
     differencePayable,
     paymentStatus,
   } = body
+
+  appraisalValue = parseFloat(appraisalValue)
+  differencePayable = parseFloat(differencePayable)
 
   try {
     const newSwap = await prisma.swap.create({

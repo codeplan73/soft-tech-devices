@@ -18,7 +18,7 @@ const SwapPage = () => {
               Dashboard / Swap
             </Link>
             <Link
-              href="/products/new"
+              href="/swap/new"
               className="px-4 py-2 text-sm text-white bg-blue-500 rounded-xl"
             >
               Swap Item
